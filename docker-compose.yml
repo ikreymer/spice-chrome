@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+    browser:
+        build: ./
+        tmpfs:
+            - /tmp
+            - /var/run
+            - /run
+
+        ports:
+            - 5959:6080
+            - 8080:8080
+
+        cap_add:
+            - ALL
+
+        shm_size: 1G
+
+
